@@ -1,0 +1,24 @@
+version: "3.9"
+
+# Development overrides — layered on top of docker-compose.yml
+# Usage: docker compose -f docker/docker-compose.yml -f docker/docker-compose.dev.yml up
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: builder   # use the builder stage to get dev dependencies
+    environment:
+      ENVIRONMENT: development
+      LOG_LEVEL: DEBUG
+    volumes:
+      # Hot-reload: mount source code into the container
+      - ../src:/app/src:ro
+    command: >
+      uvicorn src.main:app
+        --host 0.0.0.0
+        --port 8000
+        --reload
+        --reload-dir /app/src
+        --log-level debug

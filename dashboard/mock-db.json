@@ -1,0 +1,9 @@
+{
+  "stocks": [
+    {"ticker":"AAPL","latest_price":182.50,"pct_change":1.38,"price_change":2.50,"volume":2150000,"event_time":"2025-06-01T13:00:00Z"},
+    {"ticker":"MSFT","latest_price":415.20,"pct_change":0.92,"price_change":3.80,"volume":1820000,"event_time":"2025-06-01T13:00:00Z"},
+    {"ticker":"NVDA","latest_price":875.30,"pct_change":3.21,"price_change":27.20,"volume":4200000,"event_time":"2025-06-01T13:00:00Z"},
+    {"ticker":"TSLA","latest_price":245.10,"pct_change":-2.14,"price_change":-5.35,"volume":3100000,"event_time":"2025-06-01T13:00:00Z"},
+    {"ticker":"GOOGL","latest_price":178.90,"pct_change":0.45,"price_change":0.80,"volume":980000,"event_time":"2025-06-01T13:00:00Z"}
+  ]
+}

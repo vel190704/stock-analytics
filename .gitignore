@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+
+# Local environment files
+.env
+dashboard/.env
+
+# Node / frontend
+dashboard/node_modules/
+dashboard/dist/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# Playwright artifacts
+dashboard/test-results/
+dashboard/playwright-report/

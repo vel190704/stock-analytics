@@ -1,0 +1,7 @@
+{
+  "/stocks": "/stocks",
+  "/analytics/top-gainers": "/stocks",
+  "/analytics/top-losers": "/stocks",
+  "/analytics/volume-leaders": "/stocks",
+  "/health": "/stocks"
+}
