@@ -220,6 +220,13 @@ export function CandlestickChart({
   const { data: maData } = useMovingAverage(ticker, maWindow);
 
   const events: StockEvent[] = (Array.isArray(historyResp) ? historyResp : historyResp?.data) ?? [];
+  const sortedEvents = [...events].sort(
+    (a, b) => new Date(a.event_time).getTime() - new Date(b.event_time).getTime(),
+  );
+  const dedupedEvents = Array.from(
+    new Map(sortedEvents.map((event) => [event.event_time, event])).values(),
+  );
+  const visibleEvents = dedupedEvents.slice(-90);
 
   // Build an MA lookup keyed by event_time
   const maLookup = new Map<string, number>(
@@ -227,7 +234,7 @@ export function CandlestickChart({
   );
 
   // Merge MA values into the event list
-  const chartData = events.map((e) => ({
+  const chartData = visibleEvents.map((e) => ({
     ...e,
     ma: maLookup.get(e.event_time) ?? null,
   }));
@@ -242,7 +249,7 @@ export function CandlestickChart({
     );
   }
 
-  if (events.length === 0) {
+  if (visibleEvents.length === 0) {
     return (
       <div className="flex h-64 items-center justify-center rounded-lg border border-border bg-bg-card">
         <span className="font-mono text-xs text-text-muted">
@@ -253,7 +260,7 @@ export function CandlestickChart({
   }
 
   // Compute price domain with 1% padding
-  const prices = events.flatMap((e) => [e.high, e.low]);
+  const prices = visibleEvents.flatMap((e) => [e.high, e.low]);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
   const pad = (maxPrice - minPrice) * 0.01;

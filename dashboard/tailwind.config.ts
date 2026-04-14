@@ -7,20 +7,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'bg-primary': '#0d1117',
-        'bg-secondary': '#161b22',
-        'bg-card': '#21262d',
-        border: '#30363d',
-        'text-primary': '#e6edf3',
-        'text-muted': '#7d8590',
-        gain: '#3fb950',
-        loss: '#f85149',
-        amber: '#d29922',
-        accent: '#58a6ff',
+        'bg-primary': 'rgb(var(--bg-primary) / <alpha-value>)',
+        'bg-secondary': 'rgb(var(--bg-secondary) / <alpha-value>)',
+        'bg-card': 'rgb(var(--bg-card) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
+        'text-primary': 'rgb(var(--text-primary) / <alpha-value>)',
+        'text-muted': 'rgb(var(--text-muted) / <alpha-value>)',
+        gain: 'rgb(var(--gain) / <alpha-value>)',
+        loss: 'rgb(var(--loss) / <alpha-value>)',
+        amber: 'rgb(var(--amber) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       fontFamily: {
-        mono: ['"JetBrains Mono"', 'monospace'],
-        sans: ['Inter', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
+        sans: ['"Space Grotesk"', 'sans-serif'],
       },
       keyframes: {
         'ticker-scroll': {

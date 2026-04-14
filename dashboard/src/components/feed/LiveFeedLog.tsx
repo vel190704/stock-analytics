@@ -15,7 +15,7 @@ function FeedRow({ entry }: { entry: LiveFeedEntry }) {
   const ts = format(new Date(entry.timestamp), 'HH:mm:ss.SSS');
 
   return (
-    <div className="flex items-center gap-3 border-b border-border/20 px-3 py-1 font-mono text-xs animate-fade-in hover:bg-bg-card/50 transition-colors">
+    <div className="flex items-center gap-3 border-b border-border/30 px-3 py-1.5 font-mono text-xs animate-fade-in transition-colors hover:bg-bg-card/55">
       {/* Timestamp */}
       <span className="shrink-0 text-text-muted">[{ts}]</span>
 
@@ -85,9 +85,9 @@ export function LiveFeedLog() {
   }, []);
 
   return (
-    <div className="flex flex-col rounded-lg border border-border bg-bg-secondary overflow-hidden">
+    <div className="panel-surface flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-border px-4 py-2.5">
+      <div className="flex items-center justify-between border-b border-border/70 bg-gradient-to-r from-gain/10 to-transparent px-4 py-3">
         <div className="flex items-center gap-2">
           <h2 className="font-sans text-sm font-semibold text-text-primary">
             Live Feed
@@ -106,14 +106,14 @@ export function LiveFeedLog() {
           {isPaused && (
             <button
               onClick={handleResume}
-              className="rounded px-2 py-1 font-sans text-xs text-accent hover:bg-accent/10 transition-colors"
+              className="rounded-full px-2 py-1 font-sans text-xs text-accent transition-colors hover:bg-accent/10"
             >
               Resume ↓
             </button>
           )}
           <button
             onClick={clearFeed}
-            className="flex items-center gap-1 rounded px-2 py-1 font-sans text-xs text-text-muted hover:bg-bg-card hover:text-text-primary transition-colors"
+            className="flex items-center gap-1 rounded-full border border-border/70 px-2.5 py-1 font-sans text-xs text-text-muted transition-colors hover:bg-bg-card hover:text-text-primary"
             title="Clear feed"
           >
             <X className="h-3 w-3" />
@@ -126,7 +126,7 @@ export function LiveFeedLog() {
       <div
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="h-[400px] overflow-y-auto"
+        className="h-[400px] overflow-y-auto bg-bg-secondary/20"
         style={{ scrollbarWidth: 'thin', scrollbarColor: '#30363d transparent' }}
       >
         {liveFeed.length === 0 ? (

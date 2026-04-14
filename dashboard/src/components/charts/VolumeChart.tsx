@@ -52,6 +52,13 @@ export function VolumeChart({ ticker, interval }: VolumeChartProps) {
   );
 
   const events: StockEvent[] = (Array.isArray(historyResp) ? historyResp : historyResp?.data) ?? [];
+  const sortedEvents = [...events].sort(
+    (a, b) => new Date(a.event_time).getTime() - new Date(b.event_time).getTime(),
+  );
+  const dedupedEvents = Array.from(
+    new Map(sortedEvents.map((event) => [event.event_time, event])).values(),
+  );
+  const visibleEvents = dedupedEvents.slice(-90);
 
   if (isLoading) {
     return (
@@ -66,7 +73,7 @@ export function VolumeChart({ ticker, interval }: VolumeChartProps) {
   return (
     <ResponsiveContainer width="100%" height={80}>
       <BarChart
-        data={events}
+        data={visibleEvents}
         margin={{ top: 0, right: 8, left: 0, bottom: 0 }}
       >
         <XAxis
@@ -86,7 +93,7 @@ export function VolumeChart({ ticker, interval }: VolumeChartProps) {
         />
         <Tooltip content={<VolumeTooltip />} cursor={{ fill: '#ffffff08' }} />
         <Bar dataKey="volume" maxBarSize={12} radius={[2, 2, 0, 0]}>
-          {events.map((entry, index) => (
+          {visibleEvents.map((entry, index) => (
             <Cell
               key={`vol-${index}`}
               fill={entry.close >= entry.open ? '#3fb950' : '#f85149'}

@@ -20,10 +20,10 @@ function TapeCell({
   return (
     <button
       onClick={onClick}
-      className="flex shrink-0 cursor-pointer items-center gap-2 border-r border-border/40 px-4 py-2 transition-colors hover:bg-bg-card"
+      className="flex shrink-0 cursor-pointer items-center gap-2.5 border-r border-border/50 px-4 py-2 transition-all duration-200 hover:bg-bg-card/80"
       aria-label={`${summary.ticker} ${formatPrice(summary.latest_price)}`}
     >
-      <span className="font-mono text-xs font-semibold text-text-primary">
+      <span className="font-mono text-xs font-semibold tracking-wide text-text-primary">
         {summary.ticker}
       </span>
       <span className="font-mono text-xs text-text-primary">
@@ -61,7 +61,7 @@ export function TickerTape() {
   // Need at least 1 entry to render the tape
   if (tapeTickers.length === 0) {
     return (
-      <div className="ticker-tape h-9 flex items-center border-b border-border bg-bg-secondary px-4">
+      <div className="ticker-tape flex h-10 items-center border-b border-border/70 bg-bg-secondary/70 px-4 backdrop-blur-lg">
         <span className="font-mono text-xs text-text-muted animate-pulse">
           Waiting for market data…
         </span>
@@ -73,7 +73,7 @@ export function TickerTape() {
   const doubled = [...tapeTickers, ...tapeTickers];
 
   return (
-    <div className="ticker-tape h-9 overflow-hidden border-b border-border bg-bg-secondary">
+    <div className="ticker-tape h-10 overflow-hidden border-b border-border/70 bg-bg-secondary/70 backdrop-blur-lg">
       <div
         className="group flex h-full items-center"
         style={{ width: 'max-content' }}

@@ -1,6 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* { box-sizing: border-box; }
-body { background-color: #0d1117; color: #e6edf3; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+
+:root {
+	--bg-primary: 6 12 22;
+	--bg-secondary: 12 21 36;
+	--bg-card: 21 35 58;
+	--border: 49 69 102;
+	--text-primary: 238 246 255;
+	--text-muted: 146 168 198;
+	--gain: 64 209 158;
+	--loss: 255 104 115;
+	--amber: 252 192 84;
+	--accent: 120 178 255;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Space Grotesk', sans-serif;
+	background-color: rgb(var(--bg-primary));
+	color: rgb(var(--text-primary));
+	background-image:
+		radial-gradient(circle at 15% 12%, rgba(120, 178, 255, 0.2), transparent 30%),
+		radial-gradient(circle at 84% 8%, rgba(64, 209, 158, 0.14), transparent 35%),
+		radial-gradient(circle at 50% 100%, rgba(252, 192, 84, 0.08), transparent 42%);
+	background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 999px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+	background-color: rgba(146, 168, 198, 0.35);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(146, 168, 198, 0.52);
+}
+
+@layer components {
+	.panel-surface {
+		border-radius: 1rem;
+		border: 1px solid rgba(var(--border), 0.9);
+		background: rgba(var(--bg-secondary), 0.92);
+		box-shadow: 0 18px 45px -32px rgba(7, 14, 24, 0.9);
+		backdrop-filter: blur(10px);
+	}
+
+	.panel-title {
+		font-size: 0.875rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		color: rgb(var(--text-primary));
+	}
+}
