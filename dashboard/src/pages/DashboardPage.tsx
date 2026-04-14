@@ -31,7 +31,7 @@ export function DashboardPage() {
         : 'bg-loss/15 text-loss border-loss/30';
 
   return (
-    <div className="stagger-in flex flex-col gap-4 lg:gap-5">
+    <div className="stagger-in-fast flex flex-col gap-4 lg:gap-5">
       <section className="panel-surface relative overflow-hidden p-5 lg:p-6">
         <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-accent/20 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-10 -left-8 h-40 w-40 rounded-full bg-gain/15 blur-3xl" />

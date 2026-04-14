@@ -37,7 +37,7 @@ export function PortfolioPage() {
   }, [tradesResp]);
 
   return (
-    <div className="stagger-in flex flex-col gap-4">
+    <div className="stagger-in-fast flex flex-col gap-4">
       <section className="panel-surface bg-gradient-to-r from-accent/10 via-bg-secondary to-transparent p-5">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-text-muted">Capital overview</p>
         <h1 className="mt-2 font-sans text-2xl font-semibold text-text-primary">Portfolio Intelligence</h1>

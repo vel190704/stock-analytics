@@ -13,6 +13,8 @@ import { TickerTape } from '@/components/ticker/TickerTape';
  */
 export function DashboardLayout() {
   const location = useLocation();
+  const isFormHeavy = location.pathname === '/alerts' || location.pathname === '/auth';
+  const pageMotionClass = isFormHeavy ? 'page-enter-slow' : 'page-enter-fast';
 
   return (
     <div className="relative flex h-screen flex-col overflow-hidden bg-bg-primary font-sans text-text-primary">
@@ -27,7 +29,7 @@ export function DashboardLayout() {
       <div className="relative z-10 flex flex-1 overflow-hidden">
         <Sidebar className="hidden lg:flex" />
         <main className="flex-1 overflow-y-auto px-4 pb-5 pt-4 lg:px-6 lg:pb-6">
-          <div key={location.pathname} className="page-enter">
+          <div key={location.pathname} className={pageMotionClass}>
             <Outlet />
           </div>
         </main>

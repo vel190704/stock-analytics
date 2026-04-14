@@ -27,7 +27,7 @@ export function BacktestPage() {
   const tradeLog = useMemo(() => activeResult?.trades ?? [], [activeResult]);
 
   return (
-    <div className="stagger-in flex flex-col gap-4">
+    <div className="stagger-in-fast flex flex-col gap-4">
       <BacktestConfig isRunning={runBacktest.isPending} onRun={run} />
       <ResultStats result={activeResult} />
       <EquityCurveChart result={activeResult} />
