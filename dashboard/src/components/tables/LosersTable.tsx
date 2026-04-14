@@ -100,29 +100,29 @@ export function LosersTable() {
             {isLoading
               ? Array.from({ length: 5 }, (_, i) => <SkeletonRow key={i} rank={i + 1} />)
               : (entries as AnalyticsEntry[]).map((entry, idx) => (
-                  <tr
-                    key={entry.ticker}
-                    className="cursor-pointer border-b border-border/30 transition-colors hover:bg-bg-card/70"
-                    onClick={() => handleRowClick(entry.ticker)}
-                  >
-                    <td className="px-3 py-2 font-mono text-xs text-text-muted">{idx + 1}</td>
-                    <td className="px-3 py-2 font-mono text-sm font-semibold text-text-primary">
-                      {entry.ticker}
-                    </td>
-                    <td className="px-3 py-2 text-right font-mono text-xs text-text-primary">
-                      {formatPrice(entry.close)}
-                    </td>
-                    <td className="px-3 py-2 text-right">
-                      <PriceChange value={entry.pct_change} size="sm" />
-                    </td>
-                    <td className="px-3 py-2 text-right font-mono text-xs text-text-muted">
-                      {formatVolume(entry.volume)}
-                    </td>
-                    <td className="px-3 py-2 text-right">
-                      <Sparkline values={priceHistory[entry.ticker] ?? [entry.close]} />
-                    </td>
-                  </tr>
-                ))}
+                <tr
+                  key={entry.ticker}
+                  className="cursor-pointer border-b border-border/30 transition-colors hover:bg-bg-card/70"
+                  onClick={() => handleRowClick(entry.ticker)}
+                >
+                  <td className="px-3 py-2 font-mono text-xs text-text-muted">{idx + 1}</td>
+                  <td className="px-3 py-2 font-mono text-sm font-semibold text-text-primary">
+                    {entry.ticker}
+                  </td>
+                  <td className="px-3 py-2 text-right font-mono text-xs text-text-primary">
+                    {formatPrice(entry.close)}
+                  </td>
+                  <td className="px-3 py-2 text-right">
+                    <PriceChange value={entry.pct_change} size="sm" />
+                  </td>
+                  <td className="px-3 py-2 text-right font-mono text-xs text-text-muted">
+                    {formatVolume(entry.volume)}
+                  </td>
+                  <td className="px-3 py-2 text-right">
+                    <Sparkline values={priceHistory[entry.ticker] ?? [entry.close]} />
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

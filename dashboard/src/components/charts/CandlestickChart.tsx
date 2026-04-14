@@ -140,8 +140,8 @@ function IntervalTabs({
           key={i}
           onClick={() => onChange(i)}
           className={`rounded px-2.5 py-1 font-mono text-xs font-medium transition-colors ${selected === i
-              ? 'bg-accent/20 text-accent'
-              : 'text-text-muted hover:bg-bg-card hover:text-text-primary'
+            ? 'bg-accent/20 text-accent'
+            : 'text-text-muted hover:bg-bg-card hover:text-text-primary'
             }`}
         >
           {i}
@@ -170,8 +170,8 @@ type MovingAveragePoint = {
 type MovingAverageResponse =
   | MovingAveragePoint[]
   | {
-      values?: MovingAveragePoint[];
-    }
+    values?: MovingAveragePoint[];
+  }
   | null
   | undefined;
 
