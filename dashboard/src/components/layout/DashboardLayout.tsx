@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
 import { TickerTape } from '@/components/ticker/TickerTape';
@@ -12,6 +12,8 @@ import { TickerTape } from '@/components/ticker/TickerTape';
  *   [sidebar | main content — fills remaining height]
  */
 export function DashboardLayout() {
+  const location = useLocation();
+
   return (
     <div className="relative flex h-screen flex-col overflow-hidden bg-bg-primary font-sans text-text-primary">
       <div className="pointer-events-none absolute inset-0 opacity-60">
@@ -25,7 +27,9 @@ export function DashboardLayout() {
       <div className="relative z-10 flex flex-1 overflow-hidden">
         <Sidebar className="hidden lg:flex" />
         <main className="flex-1 overflow-y-auto px-4 pb-5 pt-4 lg:px-6 lg:pb-6">
-          <Outlet />
+          <div key={location.pathname} className="page-enter">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>

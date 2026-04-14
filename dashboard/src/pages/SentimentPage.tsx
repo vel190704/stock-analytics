@@ -34,7 +34,7 @@ export function SentimentPage() {
   }, [history, sentiment]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="stagger-in flex flex-col gap-4">
       <div className="panel-surface bg-gradient-to-r from-amber/10 via-bg-secondary to-transparent p-4">
         <label className="mb-1 block font-mono text-xs text-text-muted">Ticker</label>
         <select

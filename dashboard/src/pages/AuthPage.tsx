@@ -54,7 +54,7 @@ export function AuthPage() {
   };
 
   return (
-    <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 xl:grid-cols-[420px_1fr]">
+    <div className="stagger-in mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 xl:grid-cols-[420px_1fr]">
       <div className="panel-surface bg-gradient-to-b from-accent/10 to-bg-secondary p-5">
         <h1 className="mb-1 font-sans text-2xl font-semibold text-text-primary">Authentication</h1>
         <p className="mb-4 text-sm text-text-muted">

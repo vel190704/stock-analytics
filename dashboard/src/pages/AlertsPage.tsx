@@ -26,7 +26,7 @@ export function AlertsPage() {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-4 xl:grid-cols-[360px_1fr]">
+    <div className="stagger-in grid grid-cols-1 gap-4 xl:grid-cols-[360px_1fr]">
       <form onSubmit={submit} className="panel-surface bg-gradient-to-b from-accent/10 to-bg-secondary p-4">
         <h1 className="mb-4 font-sans text-2xl font-semibold text-text-primary">Alerts</h1>
 

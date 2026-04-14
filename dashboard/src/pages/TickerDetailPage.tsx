@@ -42,7 +42,7 @@ export function TickerDetailPage() {
   const latestPct = Number(latest?.pct_change ?? 0);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="stagger-in flex flex-col gap-6">
       {/* Header row */}
       <div className="flex flex-wrap items-center gap-4">
         <button
