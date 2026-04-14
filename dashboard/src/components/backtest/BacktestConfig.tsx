@@ -65,7 +65,7 @@ export function BacktestConfig({ isRunning, onRun }: BacktestConfigProps) {
   };
 
   return (
-    <form onSubmit={submit} className="rounded-lg border border-border bg-bg-secondary p-4">
+    <form onSubmit={submit} className="panel-surface bg-gradient-to-r from-accent/10 to-transparent p-4">
       <h3 className="mb-3 font-sans text-lg font-semibold">Backtest Configuration</h3>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">

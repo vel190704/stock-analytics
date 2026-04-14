@@ -24,7 +24,7 @@ export function SentimentGauge({
   }, [needleAngle]);
 
   return (
-    <div className="rounded-lg border border-border bg-bg-secondary p-4">
+    <div className="panel-surface bg-gradient-to-b from-amber/10 to-bg-secondary p-4">
       <h3 className="mb-2 font-sans text-lg font-semibold">Sentiment Gauge</h3>
       <svg width="100%" viewBox="0 0 240 150" className="mx-auto max-w-[320px]">
         <defs>

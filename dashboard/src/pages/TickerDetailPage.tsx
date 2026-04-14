@@ -102,9 +102,9 @@ export function TickerDetailPage() {
       </div>
 
       {/* Charts */}
-      <div className="rounded-lg border border-border bg-bg-secondary p-4">
+      <div className="panel-surface p-4">
         <CandlestickChart ticker={ticker} showMA maWindow={20} />
-        <div className="mt-2 border-t border-border pt-2">
+        <div className="mt-2 border-t border-border/70 pt-2">
           <p className="mb-1 font-mono text-xs text-text-muted">Volume</p>
           <VolumeChart ticker={ticker} />
         </div>
@@ -131,7 +131,7 @@ export function TickerDetailPage() {
       )}
 
       {!latestLoading && !latest && (
-        <div className="rounded-lg border border-border bg-bg-secondary p-4 text-sm text-text-muted">
+        <div className="panel-surface p-4 text-sm text-text-muted">
           No latest quote found for {ticker}. Verify the ticker exists and that live ingestion is running.
         </div>
       )}

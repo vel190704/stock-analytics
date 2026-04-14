@@ -22,7 +22,7 @@ export function StatCard({
   return (
     <div
       className={cn(
-        'flex flex-col gap-1 rounded-lg border border-border bg-bg-card px-4 py-3',
+        'panel-surface flex flex-col gap-1 px-4 py-3',
         className,
       )}
     >

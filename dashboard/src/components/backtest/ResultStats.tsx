@@ -5,7 +5,7 @@ function StatCard({ title, value, positive }: { title: string; value: string; po
   return (
     <div
       className={cn(
-        'rounded-lg border p-3',
+        'panel-surface p-3',
         positive ? 'border-gain/40 bg-gain/10' : 'border-loss/40 bg-loss/10',
       )}
     >
@@ -22,7 +22,7 @@ export function ResultStats({ result }: { result: BacktestResult | null }) {
     return (
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-6">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="h-20 animate-pulse rounded-lg border border-border bg-bg-secondary" />
+          <div key={i} className="panel-surface h-20 animate-pulse" />
         ))}
       </div>
     );

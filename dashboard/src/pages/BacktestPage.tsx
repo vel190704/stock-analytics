@@ -32,12 +32,12 @@ export function BacktestPage() {
       <ResultStats result={activeResult} />
       <EquityCurveChart result={activeResult} />
 
-      <div className="rounded-lg border border-border bg-bg-secondary p-4">
+      <div className="panel-surface p-4">
         <h3 className="mb-3 font-sans text-lg font-semibold">Trade Log</h3>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[760px] border-collapse">
             <thead>
-              <tr className="border-b border-border">
+              <tr className="border-b border-border/70">
                 <th className="px-2 py-2 text-left font-mono text-xs text-text-muted">Date</th>
                 <th className="px-2 py-2 text-left font-mono text-xs text-text-muted">Action</th>
                 <th className="px-2 py-2 text-right font-mono text-xs text-text-muted">Price</th>
@@ -47,7 +47,7 @@ export function BacktestPage() {
             </thead>
             <tbody>
               {tradeLog.map((trade, idx) => (
-                <tr key={`${trade.date}-${idx}`} className="border-b border-border/40">
+                <tr key={`${trade.date}-${idx}`} className="border-b border-border/30 transition-colors hover:bg-bg-card/45">
                   <td className="px-2 py-3 font-mono text-xs text-text-muted">
                     {new Date(trade.date).toLocaleString()}
                   </td>

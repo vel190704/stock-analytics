@@ -10,14 +10,14 @@ export interface SentimentTimelinePoint {
 export function SentimentTimeline({ data }: { data: SentimentTimelinePoint[] }) {
   if (!data.length) {
     return (
-      <div className="flex h-[300px] items-center justify-center rounded-lg border border-border bg-bg-secondary">
+      <div className="panel-surface flex h-[300px] items-center justify-center">
         <span className="font-mono text-xs text-text-muted">No sentiment timeline data</span>
       </div>
     );
   }
 
   return (
-    <div className="rounded-lg border border-border bg-bg-secondary p-4">
+    <div className="panel-surface p-4">
       <h3 className="mb-3 font-sans text-lg font-semibold">Price + Sentiment Timeline</h3>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
@@ -35,7 +35,7 @@ export function SentimentTimeline({ data }: { data: SentimentTimelinePoint[] }) 
             tick={{ fill: '#7d8590', fontSize: 10 }}
           />
           <Tooltip
-            contentStyle={{ background: '#161b22', border: '1px solid #30363d' }}
+            contentStyle={{ background: 'rgba(12,21,36,0.95)', border: '1px solid rgba(146,168,198,0.28)' }}
             formatter={(value: number, name: string) => {
               if (name === 'price') return [`$${value.toFixed(2)}`, 'Price'];
               return [value.toFixed(3), 'Sentiment'];

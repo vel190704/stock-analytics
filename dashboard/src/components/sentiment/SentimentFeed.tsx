@@ -8,10 +8,10 @@ function badgeColor(label: SentimentScore['label']): string {
 
 export function SentimentFeed({ data }: { data: SentimentScore[] }) {
   return (
-    <div className="rounded-lg border border-border bg-bg-secondary p-4">
+    <div className="panel-surface p-4">
       <div className="mb-3 flex items-center justify-between">
         <h3 className="font-sans text-lg font-semibold">Recent Sentiment Feed</h3>
-        <span className="rounded-full border border-border bg-bg-card px-2 py-1 font-mono text-[10px] text-text-muted">
+        <span className="rounded-full border border-border/70 bg-bg-card/70 px-2 py-1 font-mono text-[10px] text-text-muted">
           Powered by Claude AI
         </span>
       </div>
@@ -23,7 +23,7 @@ export function SentimentFeed({ data }: { data: SentimentScore[] }) {
             href={item.source_url}
             target="_blank"
             rel="noreferrer"
-            className="block rounded-md border border-border/60 bg-bg-card p-3 transition-colors hover:border-accent/60"
+            className="block rounded-xl border border-border/60 bg-bg-card/70 p-3 transition-colors hover:border-accent/60"
           >
             <div className="mb-2 flex items-center justify-between gap-2">
               <span className={`rounded-full px-2 py-1 font-mono text-[10px] uppercase ${badgeColor(item.label)}`}>

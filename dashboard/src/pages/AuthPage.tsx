@@ -55,7 +55,7 @@ export function AuthPage() {
 
   return (
     <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 xl:grid-cols-[420px_1fr]">
-      <div className="rounded-lg border border-border bg-bg-secondary p-5">
+      <div className="panel-surface bg-gradient-to-b from-accent/10 to-bg-secondary p-5">
         <h1 className="mb-1 font-sans text-2xl font-semibold text-text-primary">Authentication</h1>
         <p className="mb-4 text-sm text-text-muted">
           Authenticate once to enable protected write endpoints for alerts, portfolio, and backtesting.
@@ -120,7 +120,7 @@ export function AuthPage() {
         {message && <p className="mt-3 text-sm text-gain">{message}</p>}
       </div>
 
-      <div className="rounded-lg border border-border bg-bg-secondary p-5">
+      <div className="panel-surface p-5">
         <h2 className="mb-3 font-sans text-lg font-semibold text-text-primary">Session Token</h2>
         {token ? (
           <>
@@ -140,7 +140,7 @@ export function AuthPage() {
           <p className="text-sm text-text-muted">No JWT token stored yet.</p>
         )}
 
-        <div className="mt-5 rounded-md border border-border bg-bg-card p-3">
+        <div className="mt-5 rounded-xl border border-border bg-bg-card/70 p-3">
           <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-text-muted">Protected Endpoints</h3>
           <ul className="space-y-1 font-mono text-xs text-text-primary">
             <li>POST /alerts/rules</li>

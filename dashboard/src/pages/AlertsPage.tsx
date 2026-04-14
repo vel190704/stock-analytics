@@ -27,7 +27,7 @@ export function AlertsPage() {
 
   return (
     <div className="grid grid-cols-1 gap-4 xl:grid-cols-[360px_1fr]">
-      <form onSubmit={submit} className="rounded-lg border border-border bg-bg-secondary p-4">
+      <form onSubmit={submit} className="panel-surface bg-gradient-to-b from-accent/10 to-bg-secondary p-4">
         <h1 className="mb-4 font-sans text-2xl font-semibold text-text-primary">Alerts</h1>
 
         <div className="space-y-3">
@@ -92,7 +92,7 @@ export function AlertsPage() {
         </div>
       </form>
 
-      <div className="rounded-lg border border-border bg-bg-secondary p-4">
+      <div className="panel-surface p-4">
         <h2 className="mb-3 font-sans text-lg font-semibold">Alert History</h2>
 
         {isLoading ? (
@@ -101,7 +101,7 @@ export function AlertsPage() {
           <div className="overflow-x-auto">
             <table data-testid="alerts-table" className="w-full min-w-[900px] border-collapse">
               <thead>
-                <tr className="border-b border-border">
+                <tr className="border-b border-border/70">
                   <th className="px-2 py-2 text-left font-mono text-xs text-text-muted">Ticker</th>
                   <th className="px-2 py-2 text-left font-mono text-xs text-text-muted">Condition</th>
                   <th className="px-2 py-2 text-left font-mono text-xs text-text-muted">Triggered Price</th>
@@ -120,7 +120,7 @@ export function AlertsPage() {
                         ? 'Price Below'
                         : '% Change Exceeds';
                   return (
-                    <tr key={item.id} className="border-b border-border/40 align-top">
+                    <tr key={item.id} className="border-b border-border/30 align-top transition-colors hover:bg-bg-card/45">
                       <td className="px-2 py-3 font-mono text-sm">{item.ticker}</td>
                       <td className="px-2 py-3 font-mono text-xs text-text-muted">{conditionLabel}</td>
                       <td className="px-2 py-3 font-mono text-xs">{formatPrice(item.triggered_price)}</td>

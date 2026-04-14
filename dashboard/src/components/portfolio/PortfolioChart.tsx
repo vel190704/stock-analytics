@@ -8,7 +8,7 @@ export interface PortfolioValuePoint {
 export function PortfolioChart({ data }: { data: PortfolioValuePoint[] }) {
   if (!data.length) {
     return (
-      <div className="flex h-[280px] items-center justify-center rounded-lg border border-border bg-bg-secondary">
+      <div className="panel-surface flex h-[280px] items-center justify-center">
         <span className="font-mono text-xs text-text-muted">No portfolio value history yet</span>
       </div>
     );
@@ -24,7 +24,7 @@ export function PortfolioChart({ data }: { data: PortfolioValuePoint[] }) {
   }));
 
   return (
-    <div className="rounded-lg border border-border bg-bg-secondary p-4">
+    <div className="panel-surface p-4">
       <h3 className="mb-3 font-sans text-lg font-semibold text-text-primary">Portfolio Value Over Time</h3>
       <ResponsiveContainer width="100%" height={280}>
         <AreaChart data={enriched}>
@@ -38,7 +38,7 @@ export function PortfolioChart({ data }: { data: PortfolioValuePoint[] }) {
               <stop offset="100%" stopColor="#f85149" stopOpacity={0.05} />
             </linearGradient>
           </defs>
-          <CartesianGrid stroke="#30363d" strokeDasharray="3 3" />
+          <CartesianGrid stroke="rgba(146,168,198,0.2)" strokeDasharray="3 3" />
           <XAxis dataKey="time" tick={{ fill: '#7d8590', fontSize: 10 }} />
           <YAxis tick={{ fill: '#7d8590', fontSize: 10 }} />
           <Tooltip
